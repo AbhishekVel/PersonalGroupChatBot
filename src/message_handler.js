@@ -1,8 +1,9 @@
  import send_random_news from './services/news';
+ import config from './config'
  
  export default function(msg, thread_id, fb_api) {
     let msg_split = msg.split(' ');
-    if (msg_split[0].toLowerCase() == 'jaffa') {
+    if (msg_split[0].toLowerCase() == config.BOT_NAME) {
         if (msg_split.length == 1) {
             // return a list of the commands for the bot
         } else {

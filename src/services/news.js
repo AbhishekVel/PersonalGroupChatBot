@@ -9,6 +9,7 @@ function getRandomInt(max) {
 }
 
 const send_random_news = ({ news_type }, thread_id, fb_api) => {
+    console.log(config.NEWS_API_KEY)
     newsapi.v2.topHeadlines({
         category: news_type,
         language: 'en',
