@@ -13,7 +13,11 @@ export default function (msg, thread_id, fb_api) {
                     services.news.send_random_news({ news_type: msg_split[2] }, thread_id, fb_api);
                     break;
                 case 'dice':
-                    services.dice.dice_roll( { max_value: msg_split[3]}, thread_id, fb_api);
+                    services.dice.dice_roll( { max_value: msg_split[2]}, thread_id, fb_api);
+                    break;
+                /* stock market functions */
+                case 'price':
+                    services.stock_market.send_stock_price({stock: msg_split[2]}, thread_id, fb_api);
                     break;
                 default:
                     console.log('invalid command')

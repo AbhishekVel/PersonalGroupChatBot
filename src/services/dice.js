@@ -1,6 +1,6 @@
 import { getRandomInt } from '../utils';
 
-const usage = "dice [*max value]";
+const usage = ["dice [*max value]"];
 
 function dice_roll({ max_value=6 }, thread_id, fb_api) {
     let roll = getRandomInt(max_value) + 1
@@ -8,6 +8,7 @@ function dice_roll({ max_value=6 }, thread_id, fb_api) {
 }
 
 export default {
+    name:'Dice',
     usage,
     dice_roll
 };

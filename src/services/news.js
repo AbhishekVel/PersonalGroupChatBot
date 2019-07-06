@@ -5,7 +5,7 @@ import { getRandomInt } from '../utils';
 
 const newsapi = new NewsAPIModule(config.NEWS_API_KEY);
 
-const usage = "news [*category ex(technology, business, entertainment, general, health, science, sports)]";
+const usage = ["news [*category ex(technology, business, entertainment, general, health, science, sports)]"];
 
 const send_random_news = ({ news_type }, thread_id, fb_api) => {
     newsapi.v2.topHeadlines({
@@ -26,6 +26,7 @@ const send_random_news = ({ news_type }, thread_id, fb_api) => {
 }
 
 export default {
+    name:'news',
     usage,
     send_random_news
 };
