@@ -11,4 +11,5 @@ Additional credentials for .env:
 
 Features (in examples, assume bot as the BOT_NAME):
 * bot news [category]
+* dice [max_value]
 
