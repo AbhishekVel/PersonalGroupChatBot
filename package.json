@@ -12,6 +12,7 @@
     "dotenv": "^8.0.0",
     "esm": "^3.2.25",
     "facebook-chat-api": "^1.6.1",
+    "lodash": "^4.17.11",
     "newsapi": "^2.4.0"
   }
 }
