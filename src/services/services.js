@@ -1,20 +1,23 @@
 import config from '../config.js';
 import _ from 'lodash';
+import news from './news';
+import dice from './dice';
 
 const services = {
-    "news": ["category ex(technology, business, entertainment, general, health, science, sports)"],
+    dice,
+    news,
 }
 
 function send_list_of_services(thread_id, fb_api) {
-    let services_msg = _.reduce(services, (result, value, key) => {
-        result += `\n${config.BOT_NAME} ${key}`
-        _.forEach(value, (param) => {
-            result += ` [${param}]`;
-        });
+    console.log('hello');
+    let services_msg = _.reduce(services, (result, service) => {
+        result += `\n${service.usage}`;
         return result;
-    }, `${config.BOT_NAME} can handle the following messages:`);
+    }, `${config.BOT_NAME} can handle the following messages (Note: * means optional):`);
     fb_api.sendMessage(services_msg, thread_id);
 }
 
-
-export default send_list_of_services;
+export {
+    services,
+    send_list_of_services
+};

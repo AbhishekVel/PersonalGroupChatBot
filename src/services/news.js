@@ -1,15 +1,13 @@
 import config from '../config.js';
 import NewsAPIModule from 'newsapi';
+import { getRandomInt } from '../utils';
 
 
 const newsapi = new NewsAPIModule(config.NEWS_API_KEY);
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-}
+const usage = "news [*category ex(technology, business, entertainment, general, health, science, sports)]";
 
 const send_random_news = ({ news_type }, thread_id, fb_api) => {
-    console.log(config.NEWS_API_KEY)
     newsapi.v2.topHeadlines({
         category: news_type,
         language: 'en',
@@ -27,4 +25,7 @@ const send_random_news = ({ news_type }, thread_id, fb_api) => {
     });
 }
 
-export default send_random_news;
+export default {
+    usage,
+    send_random_news
+};
